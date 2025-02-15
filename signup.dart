@@ -125,7 +125,7 @@ class UniversitySignupForm extends StatefulWidget {
 
 class _UniversitySignupFormState extends State<UniversitySignupForm> {
   final _formKey = GlobalKey<FormState>();
-  final String phpUrl = 'http://192.168.29.114/api/register.php';
+  final String phpUrl = 'http://192.168.29.114/flutter/api/register.php';
 
   Future<void> submitForm() async {
     if (!_formKey.currentState!.validate()) return;
