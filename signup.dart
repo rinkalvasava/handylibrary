@@ -16,7 +16,7 @@ class _SignupPageState extends State<SignupPage> {
 
   // Controllers for university and college signups
 
-  final TextEditingController university_Name = TextEditingController();
+  final TextEditingController uniName = TextEditingController();
   final TextEditingController Email = TextEditingController();
   final TextEditingController Username = TextEditingController();
   final TextEditingController Location = TextEditingController();
@@ -79,19 +79,19 @@ class _SignupPageState extends State<SignupPage> {
               child: isUniversitySelected
                   ? UniversitySignupForm(
                       uniName: uniName,
-                      uniEmail: uniEmail,
-                      uniUsername: uniUsername,
-                      uniLocation: uniLocation,
-                      uniPassword: uniPassword,
-                      uniConPassword: uniConPassword,
+                      Email: Email,
+                      Username: Username,
+                      Location: Location,
+                      Password: Password,
+                      ConPassword: ConPassword,
                     )
                   : CollegeSignupForm(
-                      clgName: clgName,
-                      clgEmail: clgEmail,
-                      clgUsername: clgUsername,
-                      clgLocation: clgLocation,
-                      clgPassword: clgPassword,
-                      clgConPassword: clgConPassword,
+                      Name: Name,
+                      Email: Email,
+                      Username: Username,
+                      Location: Location,
+                      Password: Password,
+                      ConPassword: ConPassword,
                     ),
             ),
           ],
@@ -105,19 +105,19 @@ class UniversitySignupForm extends StatefulWidget {
   const UniversitySignupForm({
     super.key,
     required this.uniName,
-    required this.uniEmail,
-    required this.uniUsername,
-    required this.uniLocation,
-    required this.uniPassword,
-    required this.uniConPassword,
+    required this.Email,
+    required this.Username,
+    required this.Location,
+    required this.Password,
+    required this.ConPassword,
   });
 
   final TextEditingController uniName;
-  final TextEditingController uniEmail;
-  final TextEditingController uniUsername;
-  final TextEditingController uniLocation;
-  final TextEditingController uniPassword;
-  final TextEditingController uniConPassword;
+  final TextEditingController Email;
+  final TextEditingController Username;
+  final TextEditingController Location;
+  final TextEditingController Password;
+  final TextEditingController ConPassword;
 
   @override
   _UniversitySignupFormState createState() => _UniversitySignupFormState();
@@ -125,17 +125,17 @@ class UniversitySignupForm extends StatefulWidget {
 
 class _UniversitySignupFormState extends State<UniversitySignupForm> {
   final _formKey = GlobalKey<FormState>();
-  final String phpUrl = 'http://192.168.29.114/flutter/api/register.php';
+  final String phpUrl = 'http://192.168.64.58/flutter/api/register.php';
 
   Future<void> submitForm() async {
     if (!_formKey.currentState!.validate()) return;
 
     final formData = {
       'uni_name': widget.uniName.text,
-      'uni_email': widget.uniEmail.text,
-      'uni_username': widget.uniUsername.text,
-      'uni_location': widget.uniLocation.text,
-      'uni_password': widget.uniPassword.text,
+      'email': widget.Email.text,
+      'username': widget.Username.text,
+      'location': widget.Location.text,
+      'password': widget.Password.text,
     };
 
     try {
@@ -180,24 +180,24 @@ class _UniversitySignupFormState extends State<UniversitySignupForm> {
             obscureText: true,
           ),
           CustomTextField(
-            controller: widget.uniUsername,
+            controller: widget.Username,
             hintText: "Username",
             label: "Username",
             obscureText: true,
           ),
           CustomTextField(
-            controller: widget.uniLocation,
+            controller: widget.Location,
             hintText: "Location",
             label: "Location",
             obscureText: true,
           ),
           CustomTextField(
-              controller: widget.uniPassword,
+              controller: widget.Password,
               hintText: "Password",
               obscureText: true,
               label: "Password"),
           CustomTextField(
-              controller: widget.uniConPassword,
+              controller: widget.ConPassword,
               hintText: "Confirm Password",
               obscureText: true,
               label: "Confirm Password"),
