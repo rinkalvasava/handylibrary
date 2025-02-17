@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 include '../api/conn.php';
 
 // Get the data from POST request
-$name = $_POST['university_name'];
+$university_name = $_POST['university_name'];
 $email = $_POST['email'];
 $location = $_POST['location'];
 $username = $_POST['username'];
@@ -23,7 +23,7 @@ $user_type = $_POST['user_type']; // "university" or "college"
 
 // Conditional SQL queries based on user type
 if ($user_type == 'university') {
-    $sqlquery = "INSERT INTO university SET university_name = '$name', email  = '$email', location = '$location', username = '$username', password = '$password'";
+    $sqlquery = "INSERT INTO university SET university_name = '$university_name', email  = '$email', location = '$location', username = '$username', password = '$password'";
 } else if ($user_type == 'college') {
     $sqlquery = "INSERT INTO college SET name = '$name', email  = '$email', location = '$location', username = '$username', password = '$password'";
 } else {
