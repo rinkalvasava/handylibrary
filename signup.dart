@@ -211,20 +211,20 @@ class _UniversitySignupFormState extends State<UniversitySignupForm> {
 class CollegeSignupForm extends StatelessWidget {
   const CollegeSignupForm({
     super.key,
-    required this.clgName,
-    required this.clgEmail,
-    required this.clgUsername,
-    required this.clgLocation,
-    required this.clgPassword,
-    required this.clgConPassword,
+    required this.Name,
+    required this.Email,
+    required this.Username,
+    required this.Location,
+    required this.Password,
+    required this.ConPassword,
   });
 
-  final TextEditingController clgName;
-  final TextEditingController clgEmail;
-  final TextEditingController clgUsername;
-  final TextEditingController clgLocation;
-  final TextEditingController clgPassword;
-  final TextEditingController clgConPassword;
+  final TextEditingController Name;
+  final TextEditingController Email;
+  final TextEditingController Username;
+  final TextEditingController Location;
+  final TextEditingController Password;
+  final TextEditingController ConPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -232,36 +232,36 @@ class CollegeSignupForm extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       children: [
         CustomTextField(
-          controller: clgName,
+          controller: Name,
           hintText: "College Name",
           label: "College Name",
           obscureText: true,
         ),
         CustomTextField(
-          controller: clgEmail,
+          controller: Email,
           hintText: "College Email",
           label: "College Email",
           obscureText: true,
         ),
         CustomTextField(
-          controller: clgUsername,
+          controller: Username,
           hintText: "Username",
           label: "Username",
           obscureText: true,
         ),
         CustomTextField(
-          controller: clgLocation,
+          controller: Location,
           hintText: "Location",
           label: "Location",
           obscureText: true,
         ),
         CustomTextField(
-            controller: clgPassword,
+            controller: Password,
             hintText: "Password",
             obscureText: true,
             label: "Password"),
         CustomTextField(
-            controller: clgConPassword,
+            controller: ConPassword,
             hintText: "Confirm Password",
             obscureText: true,
             label: "Confirm Password"),
