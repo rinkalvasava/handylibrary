@@ -6,17 +6,17 @@ header("Access-Control-Allow-Headers: Content-Type");
 include '../api/conn.php';
 
 // Get the data from POST request
-$uniname = $_POST['university_name'];
-$uniemail = $_POST['uni_email'];
-$unilocation = $_POST['uni_location'];
-$uniusername = $_POST['uni_username'];
-$unipassword = $_POST['uni_password'];
+$name = $_POST['university_name'];
+$email = $_POST['email'];
+$location = $_POST['location'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-$clgname = $_POST['clg_name'];
-$clgemail = $_POST['clg_email'];
-$clglocation = $_POST['clg_location'];
-$clgusername = $_POST['clg_username'];
-$clgpassword = $_POST['clg_password'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$location = $_POST['location'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 
 // Get the user type from the request (university or college)
 $user_type = $_POST['user_type']; // "university" or "college"
@@ -25,7 +25,7 @@ $user_type = $_POST['user_type']; // "university" or "college"
 if ($user_type == 'university') {
     $sqlquery = "INSERT INTO university SET university_name = '$uniname', email  = '$uniemail', location = '$unilocation', username = '$uniusername', password = '$unipassword'";
 } else if ($user_type == 'college') {
-    $sqlquery = "INSERT INTO college SET name = '$clgname', email  = '$clgemail', location = '$clglocation', username = '$clgusername', password = '$clgpassword'";
+    $sqlquery = "INSERT INTO college SET name = '$name', email  = '$email', location = '$location', username = '$username', password = '$password'";
 } else {
     echo json_encode(array("success" => false, "message" => "Invalid user type"));
     exit;
