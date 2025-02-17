@@ -23,7 +23,7 @@ $user_type = $_POST['user_type']; // "university" or "college"
 
 // Conditional SQL queries based on user type
 if ($user_type == 'university') {
-    $sqlquery = "INSERT INTO university SET university_name = '$uniname', email  = '$uniemail', location = '$unilocation', username = '$uniusername', password = '$unipassword'";
+    $sqlquery = "INSERT INTO university SET university_name = '$name', email  = '$email', location = '$location', username = '$username', password = '$password'";
 } else if ($user_type == 'college') {
     $sqlquery = "INSERT INTO college SET name = '$name', email  = '$email', location = '$location', username = '$username', password = '$password'";
 } else {
