@@ -16,18 +16,18 @@ class _SignupPageState extends State<SignupPage> {
 
   // Controllers for university and college signups
 
-  final TextEditingController uniName = TextEditingController();
-  final TextEditingController uniEmail = TextEditingController();
-  final TextEditingController uniUsername = TextEditingController();
-  final TextEditingController uniLocation = TextEditingController();
-  final TextEditingController uniPassword = TextEditingController();
-  final TextEditingController uniConPassword = TextEditingController();
-  final TextEditingController clgName = TextEditingController();
-  final TextEditingController clgEmail = TextEditingController();
-  final TextEditingController clgUsername = TextEditingController();
-  final TextEditingController clgLocation = TextEditingController();
-  final TextEditingController clgPassword = TextEditingController();
-  final TextEditingController clgConPassword = TextEditingController();
+  final TextEditingController university_Name = TextEditingController();
+  final TextEditingController Email = TextEditingController();
+  final TextEditingController Username = TextEditingController();
+  final TextEditingController Location = TextEditingController();
+  final TextEditingController Password = TextEditingController();
+  final TextEditingController ConPassword = TextEditingController();
+  final TextEditingController Name = TextEditingController();
+  final TextEditingController Email = TextEditingController();
+  final TextEditingController Username = TextEditingController();
+  final TextEditingController Location = TextEditingController();
+  final TextEditingController Password = TextEditingController();
+  final TextEditingController ConPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
